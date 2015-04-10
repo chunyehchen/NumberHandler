@@ -1,8 +1,3 @@
-
-
-
-
-
 class EvenServer {
 	public int handle(int num) {
 		return num * num;

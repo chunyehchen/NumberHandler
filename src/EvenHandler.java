@@ -1,8 +1,3 @@
-
-
-
-
-
 import javax.swing.JOptionPane;
 
 public class EvenHandler extends NumHandler {

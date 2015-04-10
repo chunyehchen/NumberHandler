@@ -1,8 +1,4 @@
 
-
-
-
-
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
@@ -23,7 +19,7 @@ public class PrimeHandler extends NumHandler {
 
 			System.out.println("From Prime server : " + resFromServer);
 			System.out.println();
-			
+
 			Object[] options = { "OK" };
 			JOptionPane.showOptionDialog(null, "From Prime server :  "
 					+ resFromServer, "Notification", JOptionPane.PLAIN_MESSAGE,
@@ -38,7 +34,7 @@ public class PrimeHandler extends NumHandler {
 		if (num == 1) {
 			return false;
 		}
-		
+
 		if (num == 2) {
 			return true;
 		}
