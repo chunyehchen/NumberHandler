@@ -11,20 +11,19 @@ public class NumberHandlerWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private static final int WIDTH = 650, HEIGHT = 650;
-	private NumHandler handler;
+	private StateHandler handler;
 
-	public NumberHandlerWindow(NumHandler handler) {
+	public NumberHandlerWindow(StateHandler handler) {
 		setResizable(true);
 		this.handler = handler;
 	}
 
 	public void addComponentsToPane(Container pane) {
 		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(15, 15));
+		panel.setLayout(new GridLayout(20, 15));
 
 		ButtonListener listener = new ButtonListener();
-		// Add buttons 0-224 in for loop
-		for (int i = 0; i < 225; i++) {
+		for (int i = 1; i <= 300; i++) {
 			JButton button = new JButton("" + i);
 			button.addActionListener(listener);
 			panel.add(button);
@@ -37,7 +36,8 @@ public class NumberHandlerWindow extends JFrame {
 
 		public void actionPerformed(ActionEvent e) {
 			label = e.getActionCommand();
-			System.out.println(label + " pressed");
+			System.out.println("-----------------------");
+			System.out.println(label + " pressed.");
 
 			// Send to Processor chain
 			javax.swing.SwingUtilities.invokeLater(new Runnable() {
@@ -54,7 +54,7 @@ public class NumberHandlerWindow extends JFrame {
 	 * 
 	 * @param handler
 	 */
-	public static void createAndShowGUI(NumHandler handler) {
+	public static void createAndShowGUI(StateHandler handler) {
 		// Create and set up the window.
 		NumberHandlerWindow frame = new NumberHandlerWindow(handler);
 		frame.setName("Number Handler Window");
